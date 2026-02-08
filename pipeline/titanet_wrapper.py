@@ -17,7 +17,7 @@ class Verifier:
         database_embedding = database_embedding / torch.linalg.norm(database_embedding)
 
         similarity_score = torch.dot(embedding, database_embedding) / ((torch.dot(embedding, embedding) * torch.dot(database_embedding, database_embedding)) ** 0.5)
-        #similarity_score = (similarity_score + 1) / 2
+        similarity_score = (similarity_score + 1) / 2
 
         return similarity_score
     
