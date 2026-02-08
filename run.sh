@@ -15,6 +15,6 @@ echo "Threshold: $THRESHOLD"
 echo "Output dir: $OUTPUT_DIR"
 echo
 
-python3 experiments/run_voice_id.py \
+python3 -m experiments.run \
   --audio "$AUDIO_PATH" \
   --threshold "$THRESHOLD" 
