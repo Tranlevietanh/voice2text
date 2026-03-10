@@ -1,0 +1,22 @@
+pipeline:
+  name: pyannote.audio.pipelines.SpeechSeparation
+  params:
+    segmentation: models/Pyannote/separation
+    segmentation_step: 0.1
+    embedding: speechbrain/spkrec-ecapa-voxceleb@5c0be3875fda05e81f3c004ed8c7c06be308de1e
+    embedding_exclude_overlap: False
+    clustering: AgglomerativeClustering
+    embedding_batch_size: 8
+    segmentation_batch_size: 8
+
+params:
+  segmentation:
+    min_duration_off: 0.0
+    threshold: 0.82
+  clustering:
+    method: centroid
+    min_cluster_size: 15
+    threshold: 0.68
+  separation:
+    leakage_removal: true
+    asr_collar: 0.32
